@@ -61,6 +61,8 @@ int fs_printer(char format, va_list args)
 	type_symbol types[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_integer},
+		{"i", print_integer},
 		{NULL, NULL}
 	};
 
@@ -107,7 +109,7 @@ int nfs_printer(char prev_format, char format, int f_l)
   */
 int f_checker(char _type)
 {
-	char types[] = {'c', 's', '%'};
+	char types[] = {'c', 's',  'd', 'i', '%'};
 	int i = 0;
 
 	while (types[i])
