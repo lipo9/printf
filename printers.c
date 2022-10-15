@@ -44,3 +44,33 @@ int print_string(va_list args)
 	write_char(')');
 	return (6);
 }
+
+/**
+ * print_int - Prints an integrer.
+ * @args: variadic args list
+ *
+ * Return: The length of the string printed
+ */
+int print_int(va_list args)
+{
+	int n = va_arg(args, int);
+	int m;
+	int i = 1;
+
+	if (n < 0)
+	{
+		write_char('-');
+		n *= -1;
+		i++;
+	}
+
+	m = n;
+	while (m >= 10)
+	{
+		i++;
+		m /= 10;
+	}
+
+	_recursive_int_printer(n);
+}
+
