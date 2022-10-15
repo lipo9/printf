@@ -6,6 +6,8 @@
 int write_char(char);
 int print_char(va_list args);
 int print_string(va_list args);
+int print_int(va_list args);
+void recursive_int_printer(int n);
 int _printf(const char *format, ...);
 int format_printer(const char *format, va_list args);
 int fs_printer(char format, va_list args);

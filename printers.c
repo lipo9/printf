@@ -53,24 +53,39 @@ int print_string(va_list args)
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int m;
-	int i = 1;
+	int i = 1, n = 0;
+	unsigned int m = 0;
 
+	m = va_arg(args, int);
+	n = m;
 	if (n < 0)
 	{
-		write_char('-');
-		n *= -1;
 		i++;
+		write_char('-');
+		n = n * -1;
+		m = n;
 	}
-
-	m = n;
 	while (m >= 10)
 	{
+		m = m / 10;
 		i++;
-		m /= 10;
 	}
 
-	_recursive_int_printer(n);
+	recursive_int_printer(n);
+	return (i);
 }
 
+/**
+ * recursive_int_printer - Prints digits of integer number recursively
+ * @n: integer
+ * Return: Void
+ */
+void recursive_int_printer(int n)
+{
+	unsigned int m;
+
+	m = n;
+	if (m / 10)
+		recursive_int_printer(m / 10);
+	write_char(m % 10 + '0');
+}

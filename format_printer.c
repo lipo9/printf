@@ -61,8 +61,8 @@ int fs_printer(char format, va_list args)
 	type_symbol types[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_integer},
-		{"i", print_integer},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 
