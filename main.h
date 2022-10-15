@@ -19,8 +19,8 @@ int f_checker(char _type);
   */
 typedef struct symbols
 {
-        char *s;
-        int (*f)(va_list args);
+	char *s;
+	int (*f)(va_list args);
 } type_symbol;
 
 #endif
