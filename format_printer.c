@@ -67,6 +67,7 @@ int fs_printer(char format, va_list args)
 		{"u", print_unsigned_int},
 		{"X", print_HEX},
 		{"x", print_hex},
+		{"b", print_unsigned_binary},
 		{NULL, NULL}
 	};
 
@@ -113,7 +114,7 @@ int nfs_printer(char prev_format, char format, int f_l)
   */
 int f_checker(char _type)
 {
-	char types[] = {'c', 's',  'd', 'i', 'o', 'u', 'X', 'x', '%'};
+	char types[] = {'c', 's',  'd', 'i', 'o', 'u', 'X', 'x', 'b', '%'};
 	int i = 0;
 
 	while (types[i])
