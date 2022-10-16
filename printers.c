@@ -1,6 +1,6 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include<stdlib.h>
+#include <stdarg.h>
 
 /**
   * print_char - Prints a char
@@ -44,6 +44,7 @@ int print_string(va_list args)
 	write_char(')');
 	return (6);
 }
+
 
 /**
  * print_int - Prints an integrer.
@@ -89,3 +90,29 @@ void recursive_int_printer(int n)
 		recursive_int_printer(m / 10);
 	write_char(m % 10 + '0');
 }
+
+
+/**
+ * print_unsigned_int - Prints an unsigned integrer.
+ * @args: variadic args list
+ *
+ * Return: The number of printed digits
+ */
+int print_unsigned_int(va_list args)
+{
+	int i = 1;
+	unsigned int m = 0, n = 0;
+
+	m = va_arg(args, int);
+	n = m;
+	while (m >= 10)
+	{
+		m = m / 10;
+		i++;
+	}
+
+	recursive_int_printer(n);
+	return (i);
+}
+
+

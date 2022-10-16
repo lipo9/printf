@@ -63,6 +63,10 @@ int fs_printer(char format, va_list args)
 		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
+		{"o", print_octal},
+		{"u", print_unsigned_int},
+		{"X", print_HEX},
+		{"x", print_hex},
 		{NULL, NULL}
 	};
 
@@ -109,7 +113,7 @@ int nfs_printer(char prev_format, char format, int f_l)
   */
 int f_checker(char _type)
 {
-	char types[] = {'c', 's',  'd', 'i', '%'};
+	char types[] = {'c', 's',  'd', 'i', 'o', 'u', 'X', 'x', '%'};
 	int i = 0;
 
 	while (types[i])
