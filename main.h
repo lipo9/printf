@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdlib.h>
 
 int write_char(char);
 int print_char(va_list args);
@@ -23,6 +24,7 @@ int format_printer(const char *format, va_list args);
 int fs_printer(char format, va_list args);
 int nfs_printer(char prev_format, char format, int f_l);
 int f_checker(char _type);
+int print_string2(va_list args);
 
 /**
   * struct symbols - Struct for specifiers
