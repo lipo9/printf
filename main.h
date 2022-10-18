@@ -17,6 +17,8 @@ int print_hex(va_list args);
 void recursive_hex_printer(int n);
 int print_HEX(va_list args);
 void recursive_HEX_printer(int n);
+void print_HEX_2(int);
+void recursive_HEX_2_printer(int n);
 int print_unsigned_binary(va_list args);
 void recursive_binary_printer(int n);
 int _printf(const char *format, ...);
